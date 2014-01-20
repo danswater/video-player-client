@@ -5,11 +5,10 @@ define( function( require ) {
 
 	describe( 'CoreObject', function() {
 		var TestObject;
-		var instance;
-		var SubTestObject;
-		var subInstance;
 
 		describe( 'One level extension', function() {
+			var instance;
+
 			before(function () {
 				TestObject = CoreObject.extend( {
 					init: function( initOptions ) {
@@ -37,6 +36,9 @@ define( function( require ) {
 		} );
 
 		describe('Two level extension', function () {
+			var SubTestObject;
+			var subInstance;
+
 			before(function () {
 				SubTestObject = TestObject.extend({
 					init: function( initOptions ){
@@ -56,10 +58,31 @@ define( function( require ) {
 				subInstance.should.be.an.instanceof( TestObject );
 			} );
 
-			it('should have the correct properties and methods', function () {
-				subInstance.a.should.equal(true);
-				subInstance.a.should.equal(true);
-				subInstance.testFn().should.equal(false);
+			it( 'should have the correct properties and methods', function() {
+				subInstance.a.should.equal( true );
+				subInstance.a.should.equal( true );
+				subInstance.testFn().should.equal( false );
+			} );
+		} );
+
+		describe( 'CoreObject creation', function() {
+			var createdInstance;
+
+			before( function() {
+				createdInstance = TestObject.create( { 'a': true } );
+			} );
+
+			it( 'should be an instance of CoreObject', function() {
+				createdInstance.should.be.an.instanceof( CoreObject );
+			} );
+
+			it('should be an instance of TestObject', function () {
+				createdInstance.should.be.an.instanceof( TestObject );
+			} );
+
+			it( 'should have the correct properties and methods', function() {
+				createdInstance.a.should.equal( true );
+				createdInstance.testFn().should.equal( true );
 			} );
 		} );
 	} );

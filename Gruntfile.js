@@ -29,7 +29,7 @@ module.exports = function( grunt ) {
 				'Gruntfile.js',
 				'karma.conf.js',
 				'test/{,*/}*.js',
-				'src/{,*/}*.js'
+				'lib/{,*/}*.js'
 			]
 		},
 	} );
