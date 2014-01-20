@@ -1,6 +1,6 @@
 ( function() {
 	'use strict';
-	
+
 	var base = '../';
 
 	// Karma serves files under /base
@@ -13,6 +13,7 @@
 
 		'paths': {
 			'spec'  : 'test/spec',
+			'lib'   : 'lib/js',
 			'mocha' : 'bower_components/mocha/mocha',
 			'chai'  : 'bower_components/chai/chai',
 		}

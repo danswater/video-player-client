@@ -1,8 +1,10 @@
 // Karma configuration
 // Generated on Mon Jan 20 2014 08:17:40 GMT+0800 (PHT)
 
-module.exports = function(config) {
-	config.set({
+module.exports = function( config ) {
+	'use strict';
+
+	config.set( {
 
 		// base path, that will be used to resolve files and exclude
 		basePath: '',
@@ -10,13 +12,14 @@ module.exports = function(config) {
 
 		// frameworks to use
 		// requirejs must come before chai
-		frameworks: ['mocha', 'requirejs', 'chai'],
+		frameworks: [ 'mocha', 'requirejs', 'chai' ],
 
 
 		// list of files / patterns to load in the browser
 		files: [
 			'test/SpecRunner.js',
-			{pattern: 'test/spec/*.js', included: false}
+			{pattern: 'test/spec/*.js', included: false},
+			{pattern: 'lib/js/*.js', included: false}
 		],
 
 		client: {
@@ -27,13 +30,14 @@ module.exports = function(config) {
 
 		// list of files to exclude
 		exclude: [
-			
+
 		],
 
 
 		// test results reporter to use
 		// possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-		reporters: ['progress'],
+		// 'spec' possible through karma-spec-reporter plugin
+		reporters: [ 'spec' ],
 
 
 		// web server port
@@ -61,7 +65,7 @@ module.exports = function(config) {
 		// - Safari (only Mac; has to be installed with `npm install karma-safari-launcher`)
 		// - PhantomJS
 		// - IE (only Windows; has to be installed with `npm install karma-ie-launcher`)
-		browsers: ['Chrome', 'Firefox'],
+		browsers: [ 'Chrome', 'Firefox' ],
 
 
 		// If browser does not capture in given timeout [ms], kill it
@@ -71,5 +75,5 @@ module.exports = function(config) {
 		// Continuous Integration mode
 		// if true, it capture browsers, run tests and exit
 		singleRun: true
-	});
+	} );
 };
