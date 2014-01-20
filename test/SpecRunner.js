@@ -1,8 +1,15 @@
 ( function() {
 	'use strict';
+	
+	var base = '../';
+
+	// Karma serves files under /base
+	if ( window.__karma__ ) {
+		base = '../base';
+	}
 
 	require.config( {
-		'baseUrl': '../',
+		'baseUrl': base,
 
 		'paths': {
 			'spec'  : 'test/spec',
