@@ -1,7 +1,7 @@
 define( function( require ) {
 	'use strict';
 
-	var CoreObject = require( 'lib/core-object' );
+	var CoreObject = require( 'lib/CoreObject' );
 
 	describe( 'CoreObject', function() {
 		var TestObject;
